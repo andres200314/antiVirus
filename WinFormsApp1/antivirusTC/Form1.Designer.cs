@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp1
+﻿namespace antivirusTC
 {
     partial class Form1
     {

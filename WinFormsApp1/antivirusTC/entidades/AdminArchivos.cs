@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp1.entidades;
+﻿namespace antivirusTC.entidades;
 
 public class AdminArchivos
 {
