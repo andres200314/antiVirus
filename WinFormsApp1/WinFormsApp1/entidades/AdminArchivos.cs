@@ -11,8 +11,5 @@ public class AdminArchivos
         BytesArchivo = File.ReadAllBytes(RutaArchivo);
     }
 
-    public byte[] GetBytes()
-    {
-        return BytesArchivo;
-    }
+    
 }
