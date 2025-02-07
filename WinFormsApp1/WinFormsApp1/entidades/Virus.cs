@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WinFormsApp1.entidades
 {
-    internal class Virus
+    public class Virus
     {
         private string NombreVirus;
         private byte[] SecuenciaVirus;

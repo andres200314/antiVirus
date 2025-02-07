@@ -3,6 +3,9 @@
 public class Analizador
 {
     public Analizador(){}
-    
-    public void buscarVirus(byte[] bytesArchivo){}
+
+    public void buscarVirus(byte[] bytesArchivo, List<Virus> listaVirus)
+    {
+        
+     }
 }
