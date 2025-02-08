@@ -1,4 +1,4 @@
-using antivirusTC.entidades;
+using antivirusTC.modelos;
 
 namespace antivirusTC
 {
@@ -35,8 +35,6 @@ namespace antivirusTC
 
             return listaVirus;
         }
-        
-
         
     }
 }

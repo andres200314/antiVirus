@@ -15,3 +15,4 @@ C:\Users\Andres\Desktop\andres\Universidad\3\teoria\antivirus\WinFormsApp1\antiv
 C:\Users\Andres\Desktop\andres\Universidad\3\teoria\antivirus\WinFormsApp1\antivirusTC\obj\Debug\net8.0-windows\antivirusTC.genruntimeconfig.cache
 C:\Users\Andres\Desktop\andres\Universidad\3\teoria\antivirus\WinFormsApp1\antivirusTC\obj\Debug\net8.0-windows\ref\antivirusTC.dll
 C:\Users\Andres\Desktop\andres\Universidad\3\teoria\antivirus\WinFormsApp1\antivirusTC\obj\Debug\net8.0-windows\antivirusTC.Properties.Resources.resources
+C:\Users\Andres\Desktop\andres\Universidad\3\teoria\antivirus\WinFormsApp1\antivirusTC\obj\Debug\net8.0-windows\antivirusTC.sourcelink.json

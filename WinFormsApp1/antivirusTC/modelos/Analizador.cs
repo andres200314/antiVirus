@@ -1,4 +1,4 @@
-﻿namespace antivirusTC.entidades;
+﻿namespace antivirusTC.modelos;
 
 public class Analizador
 {
