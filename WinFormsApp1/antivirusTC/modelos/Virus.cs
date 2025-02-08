@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinFormsApp1.entidades
+namespace antivirusTC.entidades
 {
-    internal class Virus
+    public class Virus
     {
         private string NombreVirus;
         private byte[] SecuenciaVirus;

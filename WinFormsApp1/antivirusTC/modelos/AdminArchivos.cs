@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp1.entidades;
+﻿namespace antivirusTC.entidades;
 
 public class AdminArchivos
 {
@@ -10,7 +10,7 @@ public class AdminArchivos
         RutaArchivo = rutaArchivo;
         BytesArchivo = File.ReadAllBytes(RutaArchivo);
     }
-
+    
     public byte[] GetBytes()
     {
         return BytesArchivo;

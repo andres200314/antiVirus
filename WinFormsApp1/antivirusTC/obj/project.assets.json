@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andres\\Desktop\\andres\\Universidad\\3\\teoria\\antivirus\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1.csproj",
-      "projectName": "WinFormsApp1",
-      "projectPath": "C:\\Users\\Andres\\Desktop\\andres\\Universidad\\3\\teoria\\antivirus\\WinFormsApp1\\WinFormsApp1\\WinFormsApp1.csproj",
+      "projectUniqueName": "C:\\Users\\Andres\\Desktop\\andres\\Universidad\\3\\teoria\\antivirus\\WinFormsApp1\\antivirusTC\\antivirusTC.csproj",
+      "projectName": "antivirusTC",
+      "projectPath": "C:\\Users\\Andres\\Desktop\\andres\\Universidad\\3\\teoria\\antivirus\\WinFormsApp1\\antivirusTC\\antivirusTC.csproj",
       "packagesPath": "C:\\Users\\Andres\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Andres\\Desktop\\andres\\Universidad\\3\\teoria\\antivirus\\WinFormsApp1\\WinFormsApp1\\obj\\",
+      "outputPath": "C:\\Users\\Andres\\Desktop\\andres\\Universidad\\3\\teoria\\antivirus\\WinFormsApp1\\antivirusTC\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
