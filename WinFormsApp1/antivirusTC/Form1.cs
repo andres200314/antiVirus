@@ -7,6 +7,7 @@ namespace antivirusTC
     {
         private List<Virus> ListaVirus { get; set; }
         private Analizador analizador { get; set; }
+        
         public Form1(List<Virus> listaVirus)
         {
             ListaVirus = listaVirus;
@@ -24,11 +25,14 @@ namespace antivirusTC
 
         private void btnEscanear_Click(object sender, EventArgs e)
         {
-            if (!lblSeleccionar.Text.Equals("Seleccionar Archivo"))
+            if (lblSeleccionar.Text.Equals("Seleccionar Archivo")) txtResultados.Text = "Por favor seleccione un archivo";
+            else
             {
-                List<Virus> virusEncontrados = analizador.buscarVirus(File.ReadAllBytes(openFileDialog1.FileName), ListaVirus);
+                AdminArchivos adminArchivos = new AdminArchivos(openFileDialog1.FileName);
+                List<Virus> virusEncontrados = analizador.buscarVirus(adminArchivos.GetBytes(), ListaVirus);
                 StringBuilder mensajeFinal = new StringBuilder();
-                if (virusEncontrados.Count == 0) mensajeFinal.Append("No se ha encontrado Virus");
+                
+                if (virusEncontrados.Count == 0) mensajeFinal.Append("No se ha encontrado ningun virus");
                 else
                 {
                     for (int i = 0; i < virusEncontrados.Count; i++)
@@ -37,10 +41,6 @@ namespace antivirusTC
                     }
                 }
                 txtResultados.Text = mensajeFinal.ToString();
-            }
-            else
-            {
-                txtResultados.Text = "Por favor seleccione un archivo";
             }
         }
 
