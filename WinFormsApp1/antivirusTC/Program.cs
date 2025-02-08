@@ -7,21 +7,10 @@ namespace antivirusTC
         [STAThread]
         static void Main()
         {
-            // ApplicationConfiguration.Initialize();
-            // Application.Run(new Form1());
-            
             // lista virus
             List<Virus> listaVirus = llenarListaVirus(new List<Virus>());
-            
-            // Analizador
-            Analizador analizador = new Analizador();
-            List<Virus> virusEncontrados = analizador.buscarVirus(File.ReadAllBytes("..\\..\\..\\files\\completo.bin"), listaVirus);
-
-            Console.WriteLine("Lista de virus encontrados");
-            foreach (var virus in virusEncontrados)
-            {
-                Console.WriteLine(virus.getNombreVirus());
-            }
+            ApplicationConfiguration.Initialize();
+            Application.Run(new Form1(listaVirus));
             
         }
 
