@@ -28,9 +28,13 @@ namespace antivirusTC
             {
                 List<Virus> virusEncontrados = analizador.buscarVirus(File.ReadAllBytes(openFileDialog1.FileName), ListaVirus);
                 StringBuilder mensajeFinal = new StringBuilder();
-                for (int i = 0; i < virusEncontrados.Count; i++)
+                if (virusEncontrados.Count == 0) mensajeFinal.Append("No se ha encontrado Virus");
+                else
                 {
-                    mensajeFinal.Append($"{i+1}: {virusEncontrados[i].getNombreVirus()}\n");
+                    for (int i = 0; i < virusEncontrados.Count; i++)
+                    {
+                        mensajeFinal.Append($"{i+1}: {virusEncontrados[i].getNombreVirus()}\n");
+                    }
                 }
                 txtResultados.Text = mensajeFinal.ToString();
             }
