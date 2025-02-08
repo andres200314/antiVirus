@@ -1,0 +1,8 @@
+# Ignorar archivos de compilación y ejecución
+**/bin/
+**/obj/
+**.pdb
+**.dll
+**.exe
+**.cache
+**.restore.info
