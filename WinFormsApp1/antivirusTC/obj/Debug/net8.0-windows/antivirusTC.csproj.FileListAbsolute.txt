@@ -1,0 +1,17 @@
+C:\Users\Andres\Desktop\andres\Universidad\3\teoria\antivirus\WinFormsApp1\antivirusTC\bin\Debug\net8.0-windows\antivirusTC.exe
+C:\Users\Andres\Desktop\andres\Universidad\3\teoria\antivirus\WinFormsApp1\antivirusTC\bin\Debug\net8.0-windows\antivirusTC.deps.json
+C:\Users\Andres\Desktop\andres\Universidad\3\teoria\antivirus\WinFormsApp1\antivirusTC\bin\Debug\net8.0-windows\antivirusTC.runtimeconfig.json
+C:\Users\Andres\Desktop\andres\Universidad\3\teoria\antivirus\WinFormsApp1\antivirusTC\bin\Debug\net8.0-windows\antivirusTC.dll
+C:\Users\Andres\Desktop\andres\Universidad\3\teoria\antivirus\WinFormsApp1\antivirusTC\bin\Debug\net8.0-windows\antivirusTC.pdb
+C:\Users\Andres\Desktop\andres\Universidad\3\teoria\antivirus\WinFormsApp1\antivirusTC\obj\Debug\net8.0-windows\antivirusTC.Form1.resources
+C:\Users\Andres\Desktop\andres\Universidad\3\teoria\antivirus\WinFormsApp1\antivirusTC\obj\Debug\net8.0-windows\antivirusTC.csproj.GenerateResource.cache
+C:\Users\Andres\Desktop\andres\Universidad\3\teoria\antivirus\WinFormsApp1\antivirusTC\obj\Debug\net8.0-windows\antivirusTC.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Andres\Desktop\andres\Universidad\3\teoria\antivirus\WinFormsApp1\antivirusTC\obj\Debug\net8.0-windows\antivirusTC.AssemblyInfoInputs.cache
+C:\Users\Andres\Desktop\andres\Universidad\3\teoria\antivirus\WinFormsApp1\antivirusTC\obj\Debug\net8.0-windows\antivirusTC.AssemblyInfo.cs
+C:\Users\Andres\Desktop\andres\Universidad\3\teoria\antivirus\WinFormsApp1\antivirusTC\obj\Debug\net8.0-windows\antivirusTC.csproj.CoreCompileInputs.cache
+C:\Users\Andres\Desktop\andres\Universidad\3\teoria\antivirus\WinFormsApp1\antivirusTC\obj\Debug\net8.0-windows\antivirusTC.dll
+C:\Users\Andres\Desktop\andres\Universidad\3\teoria\antivirus\WinFormsApp1\antivirusTC\obj\Debug\net8.0-windows\refint\antivirusTC.dll
+C:\Users\Andres\Desktop\andres\Universidad\3\teoria\antivirus\WinFormsApp1\antivirusTC\obj\Debug\net8.0-windows\antivirusTC.pdb
+C:\Users\Andres\Desktop\andres\Universidad\3\teoria\antivirus\WinFormsApp1\antivirusTC\obj\Debug\net8.0-windows\antivirusTC.genruntimeconfig.cache
+C:\Users\Andres\Desktop\andres\Universidad\3\teoria\antivirus\WinFormsApp1\antivirusTC\obj\Debug\net8.0-windows\ref\antivirusTC.dll
+C:\Users\Andres\Desktop\andres\Universidad\3\teoria\antivirus\WinFormsApp1\antivirusTC\obj\Debug\net8.0-windows\antivirusTC.Properties.Resources.resources
