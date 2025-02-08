@@ -34,6 +34,10 @@ namespace antivirusTC
                 }
                 txtResultados.Text = mensajeFinal.ToString();
             }
+            else
+            {
+                txtResultados.Text = "Por favor seleccione un archivo";
+            }
         }
 
         

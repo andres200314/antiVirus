@@ -31,10 +31,10 @@
             lblTitulo = new Label();
             lblSeleccionar = new Label();
             btnSeleccionar = new Button();
-            txtResultados = new TextBox();
             lblResultados = new Label();
             btnEscanear = new Button();
             openFileDialog1 = new OpenFileDialog();
+            txtResultados = new Label();
             SuspendLayout();
             // 
             // lblTitulo
@@ -50,7 +50,7 @@
             // lblSeleccionar
             // 
             lblSeleccionar.AutoSize = true;
-            lblSeleccionar.Location = new Point(87, 79);
+            lblSeleccionar.Location = new Point(55, 60);
             lblSeleccionar.Name = "lblSeleccionar";
             lblSeleccionar.Size = new Size(111, 15);
             lblSeleccionar.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             // btnSeleccionar
             // 
-            btnSeleccionar.Location = new Point(223, 68);
+            btnSeleccionar.Location = new Point(55, 88);
             btnSeleccionar.Name = "btnSeleccionar";
             btnSeleccionar.Size = new Size(66, 26);
             btnSeleccionar.TabIndex = 2;
@@ -66,18 +66,10 @@
             btnSeleccionar.UseVisualStyleBackColor = true;
             btnSeleccionar.Click += btnSeleccionar_Click;
             // 
-            // txtResultados
-            // 
-            txtResultados.Location = new Point(529, 117);
-            txtResultados.Multiline = true;
-            txtResultados.Name = "txtResultados";
-            txtResultados.Size = new Size(201, 187);
-            txtResultados.TabIndex = 3;
-            // 
             // lblResultados
             // 
             lblResultados.AutoSize = true;
-            lblResultados.Location = new Point(597, 79);
+            lblResultados.Location = new Point(593, 99);
             lblResultados.Name = "lblResultados";
             lblResultados.Size = new Size(64, 15);
             lblResultados.TabIndex = 4;
@@ -85,7 +77,7 @@
             // 
             // btnEscanear
             // 
-            btnEscanear.Location = new Point(223, 206);
+            btnEscanear.Location = new Point(160, 91);
             btnEscanear.Name = "btnEscanear";
             btnEscanear.Size = new Size(75, 23);
             btnEscanear.TabIndex = 5;
@@ -97,14 +89,22 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
+            // txtResultados
+            // 
+            txtResultados.AutoSize = true;
+            txtResultados.Location = new Point(593, 128);
+            txtResultados.Name = "txtResultados";
+            txtResultados.Size = new Size(0, 15);
+            txtResultados.TabIndex = 6;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtResultados);
             Controls.Add(btnEscanear);
             Controls.Add(lblResultados);
-            Controls.Add(txtResultados);
             Controls.Add(btnSeleccionar);
             Controls.Add(lblSeleccionar);
             Controls.Add(lblTitulo);
@@ -119,9 +119,9 @@
         private Label lblTitulo;
         private Label lblSeleccionar;
         private Button btnSeleccionar;
-        private TextBox txtResultados;
         private Label lblResultados;
         private Button btnEscanear;
         private OpenFileDialog openFileDialog1;
+        private Label txtResultados;
     }
 }
