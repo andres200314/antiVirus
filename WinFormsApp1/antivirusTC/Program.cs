@@ -14,6 +14,7 @@ namespace antivirusTC
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1(listaVirus));
             
+            
         }
 
         public static List<Virus> llenarListaVirus(List<Virus> listaVirus)
@@ -34,6 +35,7 @@ namespace antivirusTC
 
             return listaVirus;
         }
+        
 
         
     }
