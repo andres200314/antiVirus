@@ -9,6 +9,8 @@ namespace antivirusTC
         {
             // lista virus
             List<Virus> listaVirus = llenarListaVirus(new List<Virus>());
+            
+            // Form
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1(listaVirus));
             
