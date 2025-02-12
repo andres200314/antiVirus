@@ -2,17 +2,17 @@
 
 public class AdminArchivos
 {
-    private string RutaArchivo;
-    private byte[] BytesArchivo;
+    private string _rutaArchivo;
+    private byte[] _bytesArchivo;
 
     public AdminArchivos(string rutaArchivo)
     {
-        RutaArchivo = rutaArchivo;
-        BytesArchivo = File.ReadAllBytes(RutaArchivo);
+        _rutaArchivo = rutaArchivo;
+        _bytesArchivo = File.ReadAllBytes(_rutaArchivo);
     }
     
     public byte[] GetBytes()
     {
-        return BytesArchivo;
+        return _bytesArchivo;
     }
 }

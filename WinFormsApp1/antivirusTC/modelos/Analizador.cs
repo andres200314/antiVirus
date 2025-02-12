@@ -2,20 +2,21 @@
 
 public class Analizador
 {
-    public Analizador(){}
+    private List<Virus> _listaVirus = LlenarListaVirus();
 
-    public List<Virus> buscarVirus(byte[] bytesArchivo, List<Virus> listaVirus)
+
+    public List<Virus> BuscarVirus(byte[] bytesArchivo)
     {
         try
         {
             List<Virus> listaVirusEncontrados = new List<Virus>();
 
-            byte[] bytesVirus = new byte[0];
-            int coincidencias = 0;
+            byte[] bytesVirus;
+            int coincidencias;
 
-            foreach (var virus in listaVirus)
+            foreach (var virus in _listaVirus)
             {
-                bytesVirus = virus.getSecuenciaVirus();
+                bytesVirus = virus.GetSecuenciaVirus();
                 coincidencias = 0;
 
 
@@ -50,5 +51,25 @@ public class Analizador
             Console.WriteLine(e);
             throw new Exception("Error inesperado");
         }
+    }
+    
+    private static List<Virus> LlenarListaVirus()
+    {
+        List<Virus> listaVirus = new List<Virus>();
+        StreamReader sr = new StreamReader("..\\..\\..\\files\\firmas.txt");
+        var linea = sr.ReadLine();
+            
+        while (linea != null)
+        {
+            listaVirus.Add(new Virus(
+                linea.Split(':')[0],  // Nombre del virus
+                linea.Split(':')[1].Split(';')  // Firma
+                    .Select(byte.Parse)  // Convertir cada valor a byte
+                    .ToArray()  // Convertir a byte[]
+            ));
+            linea = sr.ReadLine();
+        }
+
+        return listaVirus;
     }
 }

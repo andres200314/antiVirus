@@ -2,20 +2,20 @@
 {
     public class Virus
     {
-        private string NombreVirus;
-        private byte[] SecuenciaVirus;
+        private string _nombreVirus;
+        private byte[] _secuenciaVirus;
 
         public Virus(string nombreVirus, byte[] secuenciaVirus)
         {
-            NombreVirus = nombreVirus;
-            SecuenciaVirus = secuenciaVirus;
+            _nombreVirus = nombreVirus;
+            _secuenciaVirus = secuenciaVirus;
         }
         
-        public string getNombreVirus(){return NombreVirus;}
-        public void setNombreVirus(string nombreVirus){NombreVirus = nombreVirus;}
+        public string GetNombreVirus(){return _nombreVirus;}
+        public void SetNombreVirus(string nombreVirus){_nombreVirus = nombreVirus;}
         
-        public byte[] getSecuenciaVirus(){return SecuenciaVirus;}
-        public void setSecuenciaVirus(byte[] secuenciaVirus){SecuenciaVirus = secuenciaVirus;}
+        public byte[] GetSecuenciaVirus(){return _secuenciaVirus;}
+        public void SetSecuenciaVirus(byte[] secuenciaVirus){_secuenciaVirus = secuenciaVirus;}
 
         
         
