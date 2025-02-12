@@ -10,9 +10,9 @@ namespace antivirusTC
         private string _rutaArchivo;
         
         // Constantes de clase
-        private const string seleccionarArchivo = "Seleccionar Archivo";
-        private const string mensajeSinArchivo = "Por favor seleccione un archivo";
-        private const string mensajeSinVirus = "No se ha encontrado ningun virus";
+        private const string SeleccionarArchivo = "Seleccionar Archivo";
+        private const string MensajeSinArchivo = "Por favor seleccione un archivo";
+        private const string MensajeSinVirus = "No se ha encontrado ningun virus";
         private const byte Cero = 0;
         
         
@@ -37,7 +37,7 @@ namespace antivirusTC
         {
             
             
-            if (lblSeleccionar.Text.Equals(seleccionarArchivo)) txtResultados.Text = mensajeSinArchivo;
+            if (lblSeleccionar.Text.Equals(SeleccionarArchivo)) txtResultados.Text = MensajeSinArchivo;
             else
             {
                 _rutaArchivo = openFileDialog1.FileName;
@@ -45,7 +45,7 @@ namespace antivirusTC
                 List<Virus> virusEncontrados = _analizador.BuscarVirus(_adminArchivos.GetBytes());
                 StringBuilder mensajeFinal = new StringBuilder();
                 
-                if (virusEncontrados.Count == Cero) mensajeFinal.Append(mensajeSinVirus);
+                if (virusEncontrados.Count == Cero) mensajeFinal.Append(MensajeSinVirus);
                 else
                 {
                     for (int i = 0; i < virusEncontrados.Count; i++)
