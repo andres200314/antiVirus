@@ -6,6 +6,15 @@ namespace antivirusTC
     public partial class Form1 : Form
     {
         private Analizador _analizador = new Analizador();
+        private AdminArchivos _adminArchivos;
+        private string _rutaArchivo;
+        
+        // Constantes de clase
+        private const string seleccionarArchivo = "Seleccionar Archivo";
+        private const string mensajeSinArchivo = "Por favor seleccione un archivo";
+        private const string mensajeSinVirus = "No se ha encontrado ningun virus";
+        private const byte Cero = 0;
+        
         
         public Form1()
         {
@@ -16,25 +25,27 @@ namespace antivirusTC
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                lblSeleccionar.Text = openFileDialog1.FileName;
+                _rutaArchivo = openFileDialog1.FileName;
+                _adminArchivos = new AdminArchivos(_rutaArchivo);
+                lblSeleccionar.Text = _rutaArchivo;
+                txtBytes.Text = string.Join("", _adminArchivos.GetBytes());
+
             }
         }
 
         private void btnEscanear_Click(object sender, EventArgs e)
         {
-            const string seleccionarArchivo = "Seleccionar Archivo";
-            const string mensajeSinArchivo = "Por favor seleccione un archivo";
-            const string mensajeSinVirus = "No se ha encontrado ningun virus";
-            const byte cero = 0;
+            
             
             if (lblSeleccionar.Text.Equals(seleccionarArchivo)) txtResultados.Text = mensajeSinArchivo;
             else
             {
-                AdminArchivos adminArchivos = new AdminArchivos(openFileDialog1.FileName);
-                List<Virus> virusEncontrados = _analizador.BuscarVirus(adminArchivos.GetBytes());
+                _rutaArchivo = openFileDialog1.FileName;
+                _adminArchivos = new AdminArchivos(_rutaArchivo);
+                List<Virus> virusEncontrados = _analizador.BuscarVirus(_adminArchivos.GetBytes());
                 StringBuilder mensajeFinal = new StringBuilder();
                 
-                if (virusEncontrados.Count == cero) mensajeFinal.Append(mensajeSinVirus);
+                if (virusEncontrados.Count == Cero) mensajeFinal.Append(mensajeSinVirus);
                 else
                 {
                     for (int i = 0; i < virusEncontrados.Count; i++)

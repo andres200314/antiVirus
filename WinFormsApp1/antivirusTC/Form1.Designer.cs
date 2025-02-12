@@ -35,6 +35,7 @@
             btnEscanear = new Button();
             openFileDialog1 = new OpenFileDialog();
             txtResultados = new Label();
+            txtBytes = new TextBox();
             SuspendLayout();
             // 
             // lblTitulo
@@ -97,11 +98,20 @@
             txtResultados.Size = new Size(0, 15);
             txtResultados.TabIndex = 6;
             // 
+            // txtBytes
+            // 
+            txtBytes.Location = new Point(55, 146);
+            txtBytes.Multiline = true;
+            txtBytes.Name = "txtBytes";
+            txtBytes.Size = new Size(230, 255);
+            txtBytes.TabIndex = 7;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtBytes);
             Controls.Add(txtResultados);
             Controls.Add(btnEscanear);
             Controls.Add(lblResultados);
@@ -123,5 +133,6 @@
         private Button btnEscanear;
         private OpenFileDialog openFileDialog1;
         private Label txtResultados;
+        private TextBox txtBytes;
     }
 }
