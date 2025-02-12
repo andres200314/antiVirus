@@ -1,8 +1,36 @@
-# Ignorar archivos de compilación y ejecución
+# Directorios de compilación
 **/bin/
 **/obj/
+
+# Archivos de compilación
 *.pdb
 *.dll
 *.exe
 *.cache
 *.restore.info
+
+# Visual Studio
+.vs/
+*.vsidx
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# Archivos temporales
+[Tt]emp/
+*.tmp
+*.log
+
+# Paquetes NuGet
+*.nupkg
+**/packages/*
+!**/packages/build/
+*.nuget.props
+*.nuget.targets
+
+# Archivos de publicación y resultados de pruebas
+[Pp]ublish/
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
