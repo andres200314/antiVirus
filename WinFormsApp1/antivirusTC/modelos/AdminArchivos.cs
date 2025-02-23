@@ -13,15 +13,13 @@ public class AdminArchivos
     public AdminArchivos(string rutaArchivo)
     {
         _rutaArchivo = rutaArchivo;
-        _bytesArchivo = File.ReadAllBytes(_rutaArchivo);
+        // Verificar si el archivo existe en la ruta, sino un array vacío
+        _bytesArchivo = File.Exists(rutaArchivo) ? File.ReadAllBytes(rutaArchivo) : [];
     }
         
     /// <summary>
     /// Obtiene los bytes del archivo leído.
     /// <returns>Arreglo de bytes del archivo</returns>
     /// </summary>
-    public byte[] GetBytes()
-    {
-        return _bytesArchivo;
-    }
+    public byte[] GetBytes() => _bytesArchivo;
 }
