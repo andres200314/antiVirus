@@ -35,26 +35,19 @@ namespace antivirusTC
 
         private void btnEscanear_Click(object sender, EventArgs e)
         {
-            
-            
             if (lblSeleccionar.Text.Equals(SeleccionarArchivo)) txtResultados.Text = MensajeSinArchivo;
             else
             {
                 _rutaArchivo = openFileDialog1.FileName;
                 _adminArchivos = new AdminArchivos(_rutaArchivo);
-                List<Virus> virusEncontrados = _analizador.BuscarVirus(_adminArchivos.GetBytes());
-                StringBuilder mensajeFinal = new StringBuilder();
-                
-                if (virusEncontrados.Count == Cero) mensajeFinal.Append(MensajeSinVirus);
-                else
-                {
-                    for (int i = 0; i < virusEncontrados.Count; i++)
-                    {
-                        mensajeFinal.Append($"{i+1}: {virusEncontrados[i].GetNombreVirus()}\n");
-                    }
-                }
-                txtResultados.Text = mensajeFinal.ToString();
-            }
+                string[] mensajeFinal = _analizador.BuscarVirus(_adminArchivos.GetBytes());
+
+                if (mensajeFinal[0].Length == Cero) mensajeFinal[0] = MensajeSinVirus;
+                txtResultados.Text = mensajeFinal[0];
+                txtEstado.Text = mensajeFinal[1];
+
+
+            } 
         }
 
         

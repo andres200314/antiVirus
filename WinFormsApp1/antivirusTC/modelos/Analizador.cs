@@ -1,50 +1,101 @@
-﻿namespace antivirusTC.modelos;
+﻿using System.Text;
+
+namespace antivirusTC.modelos;
 
 public class Analizador
 {
     private List<Virus> _listaVirus = LlenarListaVirus();
 
 
-    public List<Virus> BuscarVirus(byte[] bytesArchivo)
+    public string[] BuscarVirus(byte[] bytesArchivo)
     {
         try
         {
-            List<Virus> listaVirusEncontrados = new List<Virus>();
+            string[] mensaje = new string[2];
+            mensaje[0] = "";
+            mensaje[1] = "q0";
 
-            byte[] bytesVirus;
-            int coincidencias;
+            for (int i = 0; i < bytesArchivo.Length - 3; i++) {
 
-            foreach (var virus in _listaVirus)
-            {
-                bytesVirus = virus.GetSecuenciaVirus();
-                coincidencias = 0;
-
-
-                for (int i = bytesVirus.Length - 1; i < bytesArchivo.Length; i++)
-                {
-                    if (bytesArchivo[i] == bytesVirus[^1])
-                    {
-                        coincidencias++;
-                        for (int j = 1; j < bytesVirus.Length; j++)
-                        {
-                            if (bytesArchivo[i - j] == bytesVirus[bytesVirus.Length - 1 - j])
-                            {
-                                coincidencias++;
-                            }
-                            else
-                            {
-                                coincidencias = 0;
-                                break;
+                //Usama
+                if (bytesArchivo[i] == _listaVirus[0].GetSecuenciaVirus()[0]) {
+                    mensaje[1] = "q1";
+                    if (bytesArchivo[i + 1] == _listaVirus[0].GetSecuenciaVirus()[1]) {
+                        mensaje[1] = "q2";
+                        if (bytesArchivo[i + 2] == _listaVirus[0].GetSecuenciaVirus()[2]) {
+                            mensaje[1] = "q1";
+                            if (bytesArchivo[i + 3] == _listaVirus[0].GetSecuenciaVirus()[3]) {
+                                mensaje[1] = "q3";
+                                // System.out.println("Usama");//OK para usama
+                                mensaje[0] += Environment.NewLine + "Usama ";
                             }
                         }
-
-                        if (coincidencias == bytesVirus.Length) listaVirusEncontrados.Add(virus);
-                        coincidencias = 0;
                     }
                 }
-            }
+                //amtrax
+                if (bytesArchivo[i] == _listaVirus[1].GetSecuenciaVirus()[0]) {
+                    mensaje[1] = "q4";
+                    if (bytesArchivo[i + 1] == _listaVirus[1].GetSecuenciaVirus()[1]) {
+                        mensaje[1] = "q4";
+                        if (bytesArchivo[i + 2] == _listaVirus[1].GetSecuenciaVirus()[2]) {
+                            mensaje[1] = "q1";
+                            if (bytesArchivo[i + 3] == _listaVirus[1].GetSecuenciaVirus()[3]) {
+                                mensaje[1] = "q5";
+                                mensaje[0] += Environment.NewLine + "Amtrax ";
+                            }
+                        }
+                    }
+                }
+                //ebola
+                if (bytesArchivo[i] == _listaVirus[2].GetSecuenciaVirus()[0]) {
+                    mensaje[1] = "q5";
+                    if (bytesArchivo[i + 1] == _listaVirus[2].GetSecuenciaVirus()[1]) {
+                        mensaje[1] = "q6";
+                        if (bytesArchivo[i + 2] == _listaVirus[2].GetSecuenciaVirus()[2]) {
+                            mensaje[1] = "q7";
+                            if (bytesArchivo[i + 3] == _listaVirus[2].GetSecuenciaVirus()[3]) {
+                                mensaje[1] = "q5";
+                                // System.out.println("ah1n1");//OK para ah1n1
+                                mensaje[0] += Environment.NewLine + "Ah1n1 ";
+                            }
+                        }
+                    }
+                }
+                //ah1n1
+                if (bytesArchivo[i] == _listaVirus[3].GetSecuenciaVirus()[0]) {
+                    mensaje[1] = "q4";
+                    if (bytesArchivo[i + 1] == _listaVirus[3].GetSecuenciaVirus()[1]) {
+                        mensaje[1] = "q6";
+                        if (bytesArchivo[i + 2] == _listaVirus[3].GetSecuenciaVirus()[2]) {
+                            mensaje[1] = "q6";
+                            if (bytesArchivo[i + 3] == _listaVirus[3].GetSecuenciaVirus()[3]) {
+                                mensaje[1] = "q8";
+                                // System.out.println("ebola");//OK para ebola
+                                mensaje[0] += Environment.NewLine + "Ebola ";
+                            }
+                        }
+                    }
+                }
+                //Covid19
+                if (bytesArchivo[i] == _listaVirus[4].GetSecuenciaVirus()[0]) {
+                    mensaje[1] = "q2";
+                    if (bytesArchivo[i + 1] == _listaVirus[4].GetSecuenciaVirus()[1]) {
+                        mensaje[1] = "q10";
+                        if (bytesArchivo[i + 2] == _listaVirus[4].GetSecuenciaVirus()[2]) {
+                            mensaje[1] = "q8";
+                            if (bytesArchivo[i + 3] == _listaVirus[4].GetSecuenciaVirus()[3]) {
+                                mensaje[1] = "q9";
+                                //System.out.println("Covid19");//OK para covid19
+                                mensaje[0] += Environment.NewLine + "Covid19 ";
+                            }
+                        }
+                    }
+                }
 
-            return listaVirusEncontrados;
+                
+            }
+        
+            return mensaje;
         }
         catch (Exception e)
         {
