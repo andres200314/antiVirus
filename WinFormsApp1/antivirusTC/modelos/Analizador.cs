@@ -1,12 +1,23 @@
-﻿using System.Text;
+﻿namespace antivirusTC.modelos;
 
-namespace antivirusTC.modelos;
-
+/// <summary>
+/// Clase encargada de analizar archivos en busca de firmas de virus conocidas.
+/// Autores: Andrés Arroyave Cardona, Juan Jerónimo Tabares
+/// Nombre del programa: Heimdall
+/// Fecha: 23/02/2025
+/// </summary>
 public class Analizador
 {
+    /// <summary>
+    /// Lista que almacena los virus.
+    /// </summary>
     private List<Virus> _listaVirus = LlenarListaVirus();
 
-
+    /// <summary>
+    /// Busca los virus en un archivo a partir de su secuencia de bytes.
+    /// <param>bytesArchivo= Arreglo de bytes que representa el contenido del archivo a analizar.</param>
+    /// <returns> Mensaje= Un arreglo de strings con el resultado del análisis. mensaje[0] contiene los nombres de los virus encontrados y mensaje[1] el estado final del analisis.</returns>
+    /// </summary>
     public string[] BuscarVirus(byte[] bytesArchivo)
     {
         try
@@ -15,10 +26,10 @@ public class Analizador
             mensaje[0] = "";
             mensaje[1] = "q0";
 
-            for (int i = 0; i < bytesArchivo.Length - 3; i++) {
-
-                //Usama
-                if (bytesArchivo[i] == _listaVirus[0].GetSecuenciaVirus()[0]) {
+            for (int i = 0; i < bytesArchivo.Length-1; i++) {
+                
+                // Comparación de secuencias de bytes con firmas de virus almacenadas
+                 if (bytesArchivo[i] == _listaVirus[0].GetSecuenciaVirus()[0]) {
                     mensaje[1] = "q1";
                     if (bytesArchivo[i + 1] == _listaVirus[0].GetSecuenciaVirus()[1]) {
                         mensaje[1] = "q2";
@@ -26,7 +37,6 @@ public class Analizador
                             mensaje[1] = "q1";
                             if (bytesArchivo[i + 3] == _listaVirus[0].GetSecuenciaVirus()[3]) {
                                 mensaje[1] = "q3";
-                                // System.out.println("Usama");//OK para usama
                                 mensaje[0] += Environment.NewLine + "Usama ";
                             }
                         }
@@ -55,7 +65,6 @@ public class Analizador
                             mensaje[1] = "q7";
                             if (bytesArchivo[i + 3] == _listaVirus[2].GetSecuenciaVirus()[3]) {
                                 mensaje[1] = "q5";
-                                // System.out.println("ah1n1");//OK para ah1n1
                                 mensaje[0] += Environment.NewLine + "Ah1n1 ";
                             }
                         }
@@ -70,7 +79,6 @@ public class Analizador
                             mensaje[1] = "q6";
                             if (bytesArchivo[i + 3] == _listaVirus[3].GetSecuenciaVirus()[3]) {
                                 mensaje[1] = "q8";
-                                // System.out.println("ebola");//OK para ebola
                                 mensaje[0] += Environment.NewLine + "Ebola ";
                             }
                         }
@@ -85,7 +93,6 @@ public class Analizador
                             mensaje[1] = "q8";
                             if (bytesArchivo[i + 3] == _listaVirus[4].GetSecuenciaVirus()[3]) {
                                 mensaje[1] = "q9";
-                                //System.out.println("Covid19");//OK para covid19
                                 mensaje[0] += Environment.NewLine + "Covid19 ";
                             }
                         }
@@ -94,7 +101,7 @@ public class Analizador
 
                 
             }
-        
+            
             return mensaje;
         }
         catch (Exception e)
@@ -103,6 +110,11 @@ public class Analizador
             throw new Exception("Error inesperado");
         }
     }
+    
+    /// <summary>
+    /// Llena la lista de virus con las firmas almacenadas desde un archivo de texto.
+    /// <returns>listaVirus= Lista de objetos Virus con sus nombres y secuencias de bytes.</returns>
+    /// </summary>
     
     private static List<Virus> LlenarListaVirus()
     {
