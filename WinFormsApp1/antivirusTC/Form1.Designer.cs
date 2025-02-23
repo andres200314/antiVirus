@@ -28,14 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             lblTitulo = new Label();
             lblSeleccionar = new Label();
             btnSeleccionar = new Button();
             lblResultados = new Label();
             btnEscanear = new Button();
             openFileDialog1 = new OpenFileDialog();
-            txtResultados = new Label();
             txtBytes = new TextBox();
+            txtResultados = new TextBox();
+            lblEstado = new Label();
+            txtEstado = new TextBox();
+            pbxAutomata = new PictureBox();
+            lblAutomata = new Label();
+            ((System.ComponentModel.ISupportInitialize)pbxAutomata).BeginInit();
             SuspendLayout();
             // 
             // lblTitulo
@@ -70,7 +76,7 @@
             // lblResultados
             // 
             lblResultados.AutoSize = true;
-            lblResultados.Location = new Point(593, 99);
+            lblResultados.Location = new Point(332, 99);
             lblResultados.Name = "lblResultados";
             lblResultados.Size = new Size(64, 15);
             lblResultados.TabIndex = 4;
@@ -90,29 +96,71 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
-            // txtResultados
-            // 
-            txtResultados.AutoSize = true;
-            txtResultados.Location = new Point(593, 128);
-            txtResultados.Name = "txtResultados";
-            txtResultados.Size = new Size(0, 15);
-            txtResultados.TabIndex = 6;
-            // 
             // txtBytes
             // 
-            txtBytes.Location = new Point(55, 146);
+            txtBytes.Location = new Point(55, 120);
             txtBytes.Multiline = true;
             txtBytes.Name = "txtBytes";
             txtBytes.Size = new Size(230, 255);
             txtBytes.TabIndex = 7;
+            // 
+            // txtResultados
+            // 
+            txtResultados.Location = new Point(320, 120);
+            txtResultados.Multiline = true;
+            txtResultados.Name = "txtResultados";
+            txtResultados.ReadOnly = true;
+            txtResultados.Size = new Size(100, 112);
+            txtResultados.TabIndex = 8;
+            // 
+            // lblEstado
+            // 
+            lblEstado.AutoSize = true;
+            lblEstado.Location = new Point(322, 258);
+            lblEstado.Name = "lblEstado";
+            lblEstado.Size = new Size(98, 15);
+            lblEstado.TabIndex = 9;
+            lblEstado.Text = "Estado De Parada";
+            // 
+            // txtEstado
+            // 
+            txtEstado.Location = new Point(320, 291);
+            txtEstado.Name = "txtEstado";
+            txtEstado.ReadOnly = true;
+            txtEstado.Size = new Size(100, 23);
+            txtEstado.TabIndex = 10;
+            // 
+            // pbxAutomata
+            // 
+            pbxAutomata.BackColor = SystemColors.ActiveCaptionText;
+            pbxAutomata.Image = (Image)resources.GetObject("pbxAutomata.Image");
+            pbxAutomata.Location = new Point(445, 108);
+            pbxAutomata.Name = "pbxAutomata";
+            pbxAutomata.Size = new Size(322, 298);
+            pbxAutomata.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbxAutomata.TabIndex = 11;
+            pbxAutomata.TabStop = false;
+            // 
+            // lblAutomata
+            // 
+            lblAutomata.AutoSize = true;
+            lblAutomata.Location = new Point(570, 88);
+            lblAutomata.Name = "lblAutomata";
+            lblAutomata.Size = new Size(60, 15);
+            lblAutomata.TabIndex = 12;
+            lblAutomata.Text = "Automata";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(txtBytes);
+            Controls.Add(lblAutomata);
+            Controls.Add(pbxAutomata);
+            Controls.Add(txtEstado);
+            Controls.Add(lblEstado);
             Controls.Add(txtResultados);
+            Controls.Add(txtBytes);
             Controls.Add(btnEscanear);
             Controls.Add(lblResultados);
             Controls.Add(btnSeleccionar);
@@ -120,6 +168,7 @@
             Controls.Add(lblTitulo);
             Name = "Form1";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)pbxAutomata).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -132,7 +181,11 @@
         private Label lblResultados;
         private Button btnEscanear;
         private OpenFileDialog openFileDialog1;
-        private Label txtResultados;
         private TextBox txtBytes;
+        private TextBox txtResultados;
+        private Label lblEstado;
+        private TextBox txtEstado;
+        private PictureBox pbxAutomata;
+        private Label lblAutomata;
     }
 }

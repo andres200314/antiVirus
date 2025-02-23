@@ -1,8 +1,13 @@
-using System.Text;
 using antivirusTC.modelos;
 
 namespace antivirusTC
 {
+    /// <summary>
+    /// Clase principal del formulario que permite la interacción con el usuario.
+    /// Autores: Andrés Arroyave Cardona, Juan Jerónimo Tabares
+    /// Nombre del programa: Heimdall
+    /// Fecha: 23/02/2025
+    /// </summary>
     public partial class Form1 : Form
     {
         private Analizador _analizador = new Analizador();
@@ -15,12 +20,15 @@ namespace antivirusTC
         private const string MensajeSinVirus = "No se ha encontrado ningun virus";
         private const byte Cero = 0;
         
-        
         public Form1()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Maneja el evento de clic en el botón de selección de archivo.
+        /// Abre un cuadro de diálogo para seleccionar un archivo y muestra su ruta.
+        /// </summary>
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -29,35 +37,27 @@ namespace antivirusTC
                 _adminArchivos = new AdminArchivos(_rutaArchivo);
                 lblSeleccionar.Text = _rutaArchivo;
                 txtBytes.Text = string.Join("", _adminArchivos.GetBytes());
-
             }
         }
 
+        /// <summary>
+        /// Maneja el evento de clic en el botón de escaneo de archivo.
+        /// Analiza el archivo seleccionado en busca de virus y muestra los resultados.
+        /// </summary>
         private void btnEscanear_Click(object sender, EventArgs e)
         {
-            
-            
-            if (lblSeleccionar.Text.Equals(SeleccionarArchivo)) txtResultados.Text = MensajeSinArchivo;
+            if (lblSeleccionar.Text.Equals(SeleccionarArchivo)) 
+                txtResultados.Text = MensajeSinArchivo;
             else
             {
                 _rutaArchivo = openFileDialog1.FileName;
                 _adminArchivos = new AdminArchivos(_rutaArchivo);
-                List<Virus> virusEncontrados = _analizador.BuscarVirus(_adminArchivos.GetBytes());
-                StringBuilder mensajeFinal = new StringBuilder();
-                
-                if (virusEncontrados.Count == Cero) mensajeFinal.Append(MensajeSinVirus);
-                else
-                {
-                    for (int i = 0; i < virusEncontrados.Count; i++)
-                    {
-                        mensajeFinal.Append($"{i+1}: {virusEncontrados[i].GetNombreVirus()}\n");
-                    }
-                }
-                txtResultados.Text = mensajeFinal.ToString();
-            }
-        }
+                string[] mensajeFinal = _analizador.BuscarVirus(_adminArchivos.GetBytes());
 
-        
-        
+                if (mensajeFinal[0].Length == Cero) mensajeFinal[0] = MensajeSinVirus;
+                txtResultados.Text = mensajeFinal[0];
+                txtEstado.Text = mensajeFinal[1];
+            } 
+        }
     }
 }
