@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             lblTitulo = new Label();
             lblSeleccionar = new Label();
             btnSeleccionar = new Button();
@@ -38,6 +39,9 @@
             txtResultados = new TextBox();
             lblEstado = new Label();
             txtEstado = new TextBox();
+            pbxAutomata = new PictureBox();
+            lblAutomata = new Label();
+            ((System.ComponentModel.ISupportInitialize)pbxAutomata).BeginInit();
             SuspendLayout();
             // 
             // lblTitulo
@@ -126,11 +130,33 @@
             txtEstado.Size = new Size(100, 23);
             txtEstado.TabIndex = 10;
             // 
+            // pbxAutomata
+            // 
+            pbxAutomata.BackColor = SystemColors.ActiveCaptionText;
+            pbxAutomata.Image = (Image)resources.GetObject("pbxAutomata.Image");
+            pbxAutomata.Location = new Point(445, 108);
+            pbxAutomata.Name = "pbxAutomata";
+            pbxAutomata.Size = new Size(322, 298);
+            pbxAutomata.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbxAutomata.TabIndex = 11;
+            pbxAutomata.TabStop = false;
+            // 
+            // lblAutomata
+            // 
+            lblAutomata.AutoSize = true;
+            lblAutomata.Location = new Point(570, 88);
+            lblAutomata.Name = "lblAutomata";
+            lblAutomata.Size = new Size(60, 15);
+            lblAutomata.TabIndex = 12;
+            lblAutomata.Text = "Automata";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblAutomata);
+            Controls.Add(pbxAutomata);
             Controls.Add(txtEstado);
             Controls.Add(lblEstado);
             Controls.Add(txtResultados);
@@ -142,6 +168,7 @@
             Controls.Add(lblTitulo);
             Name = "Form1";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)pbxAutomata).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -158,5 +185,7 @@
         private TextBox txtResultados;
         private Label lblEstado;
         private TextBox txtEstado;
+        private PictureBox pbxAutomata;
+        private Label lblAutomata;
     }
 }
