@@ -37,6 +37,8 @@ namespace antivirusTC
                 _adminArchivos = new AdminArchivos(_rutaArchivo);
                 lblSeleccionar.Text = _rutaArchivo;
                 txtBytes.Text = string.Join("", _adminArchivos.GetBytes());
+                txtResultados.Clear();
+                txtEstado.Clear();
             }
         }
 
