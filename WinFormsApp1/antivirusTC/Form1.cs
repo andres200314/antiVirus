@@ -14,12 +14,6 @@ namespace antivirusTC
         private AdminArchivos _adminArchivos;
         private string _rutaArchivo;
         
-        // Constantes de clase
-        private const string SeleccionarArchivo = "Seleccionar Archivo";
-        private const string MensajeSinArchivo = "Por favor seleccione un archivo";
-        private const string MensajeSinVirus = "No se ha encontrado ningun virus";
-        private const byte Cero = 0;
-        
         public Form1()
         {
             InitializeComponent();
@@ -48,6 +42,10 @@ namespace antivirusTC
         /// </summary>
         private void btnEscanear_Click(object sender, EventArgs e)
         {
+            const string SeleccionarArchivo = "Seleccionar Archivo";
+            const string MensajeSinArchivo = "Por favor seleccione un archivo";
+            const string MensajeSinVirus = "No se ha encontrado ningun virus";
+            const byte Cero = 0;
             if (lblSeleccionar.Text.Equals(SeleccionarArchivo)) 
                 txtResultados.Text = MensajeSinArchivo;
             else
