@@ -101,6 +101,7 @@
             txtBytes.Location = new Point(55, 120);
             txtBytes.Multiline = true;
             txtBytes.Name = "txtBytes";
+            txtBytes.ReadOnly = true;
             txtBytes.Size = new Size(230, 255);
             txtBytes.TabIndex = 7;
             // 

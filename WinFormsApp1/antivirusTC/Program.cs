@@ -1,5 +1,3 @@
-using antivirusTC.modelos;
-
 namespace antivirusTC
 {
     /// <summary>
